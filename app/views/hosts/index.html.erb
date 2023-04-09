@@ -1,0 +1,18 @@
+<table class = "table">
+   <thead>
+     <tr>
+       <th>一覧</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>
+         <% @hosts.each do |f| %>
+           <%= link_to f.title, host_path(f) %>
+           <%= f.body %>
+         <% end %>
+       </td>
+     </tr>
+   </tbody>
+</table>
+

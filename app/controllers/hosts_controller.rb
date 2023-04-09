@@ -7,13 +7,16 @@ class HostsController < ApplicationController
   end
 
   def create
-    host = Host.new(host_params)
-    host.save
-    redirect_to '/top'
+    @host = Host.new(host_params)
+    @host.save
+    redirect_to host_path(@host)
   end
 
   def index
     @hosts = Host.all
+  end
+  def show
+    @host = Host.find(params[:id])
   end
 
 
