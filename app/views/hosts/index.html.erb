@@ -4,15 +4,16 @@
        <th>一覧</th>
      </tr>
    </thead>
-   <tbody>
-     <tr>
-       <td>
-         <% @hosts.each do |f| %>
-           <%= link_to f.title, host_path(f) %>
-           <%= f.body %>
-         <% end %>
-       </td>
-     </tr>
-   </tbody>
+    <% @hosts.each do |f| %>
+       <tbody>
+         <tr>
+           <td>
+
+               <%= link_to f.title, host_path(f) %>
+               <%= f.body %>
+           </td>
+         </tr>
+       </tbody>
+    <% end %>
 </table>
 

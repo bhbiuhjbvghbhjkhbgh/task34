@@ -1,2 +1,4 @@
 <%= @host.title %>
 <%= @host.body %>
+<%= link_to "編集", edit_host_path(@host.id) %>
+<%= link_to "削除", host_path(@host.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

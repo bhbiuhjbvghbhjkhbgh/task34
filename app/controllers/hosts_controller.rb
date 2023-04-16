@@ -18,6 +18,19 @@ class HostsController < ApplicationController
   def show
     @host = Host.find(params[:id])
   end
+  def edit
+    @host = Host.find(params[:id])
+  end
+  def update
+    @host = Host.find(params[:id])
+    @host.update(host_params)
+    redirect_to host_path(@host)
+  end
+  def destroy
+    host = Host.find(params[:id])
+    host.destroy
+    redirect_to hosts_path
+  end
 
 
   private
